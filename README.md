@@ -95,7 +95,53 @@ These stakeholders play crucial roles in various aspects of the project, from da
 1. Trip Data:
 - Structure: The Date is stored in CSV (Comma-Separated Values) format, of whcih i uploaded to Rstuido and converted to a database tables.
 - Organization: Each row represents a single bike trip with columns for trip details such as trip duration, start time, end time, bike ID, user type, and possibly additional attributes like user demographics.
-- Key Fields:
+- Combining Data Files
+To handle the data more efficiently, especially given the volume and the fact that the data spans from January 2024 to May 2024 in separate CSV files, I combined all these files into a single dataset. This approach ensures a seamless analysis process and helps in maintaining consistency.
 
+Steps to Combine Data Files
+---
+I. Locating the Files:
+All the CSV files were stored in a designated folder on my local computer.
+
+II. Combining Files Using Command Prompt on Windows:
+I used the Command Prompt to concatenate all CSV files into a single file. Below are the steps and commands used:
+
+a. Navigate to the Folder:
+Open the Command Prompt and navigate to the directory containing your CSV files.
+
+```
+C:\Users\user\Desktop\Data Analytics\Coursea\Capstone project\Cyclistic_Trip_Data Cousera Capstone Project\Raw_data_for_cyclistic_trip_data\Csv
+files extracted for Cyclistic trip analysis from 2024 data
+```
+b. Combine the Files:
+Use the following command to concatenate all CSV files into a single file named Combined_2024_Cyclistic_trip_analysis_data.csv
+
+```
+copy *.csv Combined_2024_Cyclistic_trip_analysis_data.csv
+```
+c. Rationale for Combining Files:
+Combining the files simplifies the data processing workflow. Instead of loading multiple files and merging them within R, which can be resource-intensive, combining them beforehand reduces the computational load during the analysis phase. It also ensures that all data is in a consistent format and ready for immediate use.
+
+d. Loading the Combined File in R:
+After combining the files, the next step was to load the combined data file into R for further processing and analysis
+
+```
+# Load necessary libraries
+install.packages("tidyverse")
+library(tidyverse)
+library(lubridate)
+
+# Load the combined data file
+combined_data <- read_csv("Combined_2024_Cyclistic_trip_analysis_data")
+
+# Preview the first few rows of the data
+head(Combined_2024_Cyclistic_trip_analysis_data)
+
+# Check the structure of the data
+str(Combined_2024_Cyclistic_trip_analysis_data)
+
+```
+
+- Key Fields:
 ### Data Credibility
 
