@@ -63,7 +63,6 @@
 - [Additional Analysis](additional-analysis)
 - [References](references)
 
-
 ### Introduction
 ---
 ### Project Overview
@@ -97,3 +96,6 @@ These stakeholders play crucial roles in various aspects of the project, from da
 - Structure: The Date is stored in CSV (Comma-Separated Values) format, of whcih i uploaded to Rstuido and converted to a database tables.
 - Organization: Each row represents a single bike trip with columns for trip details such as trip duration, start time, end time, bike ID, user type, and possibly additional attributes like user demographics.
 - Key Fields:
+
+### Data Credibility
+
